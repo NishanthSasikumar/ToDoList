@@ -1,0 +1,3 @@
+com\todolist\Config\DBConfig.class
+com\todolist\Auth\Signup.class
+com\todolist\Config\AppConfig.class
