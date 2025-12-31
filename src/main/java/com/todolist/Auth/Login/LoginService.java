@@ -8,7 +8,19 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	LoginRepository loginRep;
 	
-	
+	public String checkAuth(String Email,String Password)
+	{
+		if(loginRep.checkEmail(Email))
+		{
+			String PW=loginRep.checkPassWord(Email);
+			if(PW.equals(Password))
+				return "redirect"; //you need to learn about redirect
+			else
+				return "Password Mismatch";
+		}
+		else
+			return "Please Signup";
+	}
 }

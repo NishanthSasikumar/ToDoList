@@ -12,9 +12,11 @@ public class SignupController {
 	SignupService signupser;
 	
 	@PostMapping("/Signup")
-	public String handleSignup(@RequestParam("Email") String Email,@RequestParam("passWord") String passWord,@RequestParam("ConfirmPW") String confirmPW)
+	public String handleSignup(@RequestParam("Email") String Email,@RequestParam("passWord") String passWord,@RequestParam("ConfirmPW") String confirmPW,HttpSession session)
 	{
 		signupser.Store(Email,passWord,confirmPW);
+		session.setAttribute("userId",Email);
+		session.setAttribute("Role","user");
 		return "Saved Successfully";
 	}
 }
