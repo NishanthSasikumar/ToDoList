@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
 public class SignupController {
 	
@@ -16,7 +18,7 @@ public class SignupController {
 	{
 		signupser.Store(Email,passWord,confirmPW);
 		session.setAttribute("userId",Email);
-		session.setAttribute("Role","user");
+		session.setAttribute("Role","User");
 		return "Saved Successfully";
 	}
 }
