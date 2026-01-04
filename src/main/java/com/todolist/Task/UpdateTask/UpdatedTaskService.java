@@ -1,4 +1,4 @@
-package com.todolist.Task.AddTask;
+package com.todolist.Task.UpdateTask;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,20 +10,20 @@ import com.todolist.Task.AddTask.Resources.TaskDetails;
 import jakarta.servlet.http.HttpSession;
 
 @Service
-public class AddTaskService {
-	
+public class UpdatedTaskService {
 	@Autowired
-	AddTaskRepository addTaskRepository;
+	UpdatedTaskRepository updatedTaskSer;
 	
-	public void saveTask(Task req,HttpSession session)
+	public void updatedTask(Task task,HttpSession session)
 	{
 		TaskDetails det=new TaskDetails();
-		det.setTitle(req.getTitle());
-		det.setDescription(req.getDescription());
-		det.setPriority(req.getPriority());
-		det.setStatus(Status.PENDING);
-		det.setDate(req.getDate());
+		det.setTitle(task.getTitle());
+		det.setDescription(task.getDescription());
+		det.setDate(task.getDate());
+		det.setPriority(task.getPriority());
 		det.setEmail((String)session.getAttribute("userId"));
-		addTaskRepository.save(det);
+		det.setStatus(Status.COMPLETED);
+		updatedTaskSer.save(det);
 	}
+	
 }

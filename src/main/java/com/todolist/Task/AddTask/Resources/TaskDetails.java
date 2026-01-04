@@ -1,4 +1,4 @@
-package com.todolist.Task.AddTask;
+package com.todolist.Task.AddTask.Resources;
 
 import java.time.LocalDate;
 

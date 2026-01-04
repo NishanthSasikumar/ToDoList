@@ -1,4 +1,4 @@
-package com.todolist.Task.AddTask;
+package com.todolist.Task.UpdateTask;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.todolist.Task.AddTask.Resources.TaskDetails;
 
 @Repository
-public interface AddTaskRepository extends JpaRepository<TaskDetails, Long>{
+public interface UpdatedTaskRepository extends JpaRepository<TaskDetails,Long>{
+	
+	
 	
 }
