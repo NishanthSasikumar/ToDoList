@@ -9,13 +9,14 @@ public class SignupService {
 	@Autowired
 	SignupRepository signupRepo;
 	
-	public void Store(String Email,String password,String confirmPW)
+	public String Store(String Email,String password,String confirmPW)
 	{
 		if(!password.equals(confirmPW))
-			throw error;
+			return "Password Mismatch";
 		if(checkEmail(Email))
-			throw error
-		signupRepo.storeRepo(Email, password);;
+			return "Email Already Exist";
+		signupRepo.storeRepo(Email, password);
+		return "success";
 				
 	}
 	public Boolean checkEmail(String Email)

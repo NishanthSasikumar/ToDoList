@@ -19,6 +19,6 @@ public class InboxService {
 	public List<TaskDetails> getTask(HttpSession session)
 	{
 		Sort sort=Sort.by(Sort.Direction.ASC,"Date");
-		return inboxRepo.FindByEmail((String)session.getAttribute("userId"),sort);
+		return inboxRepo.findByEmail((String)session.getAttribute("userId"),sort);
 	}
 }

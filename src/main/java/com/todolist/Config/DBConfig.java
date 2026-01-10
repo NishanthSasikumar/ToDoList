@@ -15,7 +15,7 @@ public class DBConfig {
 	{
 		DriverManagerDataSource ds=new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/");
+		ds.setUrl("jdbc:mysql://localhost:3306/todoListDb");
 		ds.setUsername("root");
 		ds.setPassword("Kakashi@27");
 		return ds;

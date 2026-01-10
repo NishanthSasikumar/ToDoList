@@ -1,8 +1,8 @@
 package com.todolist.Auth.Login;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class LoginService {
@@ -16,7 +16,7 @@ public class LoginService {
 		{
 			String PW=loginRep.checkPassWord(Email);
 			if(PW.equals(Password))
-				return "redirect"; //you need to learn about redirect
+				return "redirect:/Today";
 			else
 				return "Password Mismatch";
 		}

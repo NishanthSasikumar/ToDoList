@@ -18,6 +18,6 @@ public class TodayService {
 	
 	public List<TaskDetails> getToday(HttpSession session)
 	{
-		return todayRep.FindByEmailAndDate((String)session.getAttribute("userId"), LocalDate.now());
+		return todayRep.findByEmailAndDate((String)session.getAttribute("userId"), LocalDate.now());
 	}
 }

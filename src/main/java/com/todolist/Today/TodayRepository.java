@@ -9,6 +9,6 @@ import com.todolist.Task.AddTask.Resources.TaskDetails;
 @Repository
 public interface TodayRepository extends JpaRepository<TaskDetails,Long> {
 	
-	List<TaskDetails> FindByEmailAndDate(String Email,LocalDate Date);
+	List<TaskDetails> findByEmailAndDate(String Email,LocalDate Date);
 
 }

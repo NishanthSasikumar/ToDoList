@@ -10,5 +10,5 @@ import com.todolist.Task.AddTask.Resources.TaskDetails;
 
 @Repository
 public interface InboxRepository extends JpaRepository<TaskDetails,Long>{
-	List<TaskDetails> FindByEmail(String Email,Sort sort);
+	List<TaskDetails> findByEmail(String Email,Sort sort);
 }

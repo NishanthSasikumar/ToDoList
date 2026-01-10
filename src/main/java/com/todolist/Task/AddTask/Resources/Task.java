@@ -3,28 +3,28 @@ package com.todolist.Task.AddTask.Resources;
 import java.time.LocalDate;
 
 public class Task {
-	private String Title;
-	private String Description;
-	private LocalDate Date;
+	private String title;
+	private String description;
+	private LocalDate date;
 	private Priority priority;
 	
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	public LocalDate getDate() {
-		return Date;
+		return date;
 	}
 	public void setDate(LocalDate date) {
-		Date = date;
+		this.date = date;
 	}
 	public Priority getPriority() {
 		return priority;

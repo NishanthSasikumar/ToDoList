@@ -2,6 +2,8 @@ package com.todolist.Task.AddTask.Resources;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -11,38 +13,39 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Task")
+@Table(name="task")
 public class TaskDetails {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long Id;
-	private String Email;
-	private String Title;
-	private String Description;
+	private Long id;
+	private String email;
+	private String title;
+	private String description;
 	@Enumerated(EnumType.STRING)
 	private Priority priority;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-	private LocalDate Date;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate date;
 	
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 	public Priority getPriority() {
 		return priority;
@@ -57,13 +60,13 @@ public class TaskDetails {
 		this.status = status;
 	}
 	public LocalDate getDate() {
-		return Date;
+		return date;
 	}
 	public void setDate(LocalDate date) {
-		Date = date;
+		this.date = date;
 	}
 	public Long getId() {
-		return Id;
+		return id;
 	}
 }
 

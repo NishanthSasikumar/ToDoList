@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.todolist.Task.AddTask.Resources.Task;
 
@@ -17,9 +18,10 @@ public class AddTaskController {
 	@Autowired
 	AddTaskService addTaskService;
 	
-	@PostMapping("/AddTask")
-	public String addTask(@RequestBody Task task,HttpSession session) {
+	 @PostMapping(value = "/AddTask",consumes = "application/json")
+	public String addTask(@RequestBody Task task,HttpSession session,RedirectAttributes ra) {
 		addTaskService.saveTask(task,session);
-		return "success";
+		ra.addFlashAttribute("Msg","task added successfully");
+		return "redirect:/Today";
 	}
 }
